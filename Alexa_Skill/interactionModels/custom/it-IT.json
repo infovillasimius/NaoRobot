@@ -1,0 +1,82 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "zora robot",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "SedutoIntent",
+          "slots": [],
+          "samples": [
+            "sedere",
+            "sedersi",
+            "seduto",
+            "siediti"
+          ]
+        },
+        {
+          "name": "InPiediIntent",
+          "slots": [],
+          "samples": [
+            "alzarsi",
+            "tirati su",
+            "alzati",
+            "in piedi"
+          ]
+        },
+        {
+          "name": "AccovacciatoIntent",
+          "slots": [],
+          "samples": [
+            "stare giu",
+            "accovacciarsi",
+            "giu",
+            "in ginocchio",
+            "accovacciato"
+          ]
+        },
+        {
+          "name": "BallaIntent",
+          "slots": [],
+          "samples": [
+            "danzare",
+            "ballare",
+            "danza",
+            "balla"
+          ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "salutaIntent",
+          "slots": [],
+          "samples": [
+            "arrivederci",
+            "ciao",
+            "salutare",
+            "saluta"
+          ]
+        }
+      ],
+      "types": []
+    }
+  },
+  "version": "12"
+}

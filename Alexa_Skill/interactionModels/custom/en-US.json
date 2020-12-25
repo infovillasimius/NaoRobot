@@ -1,0 +1,61 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "zora robot",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "InPiediIntent",
+          "slots": [],
+          "samples": [
+            "up",
+            "get up",
+            "stand up"
+          ]
+        },
+        {
+          "name": "SedutoIntent",
+          "slots": [],
+          "samples": [
+            "sit",
+            "sit down"
+          ]
+        },
+        {
+          "name": "AccovacciatoIntent",
+          "slots": [],
+          "samples": [
+            "crouch",
+            "down"
+          ]
+        }
+      ],
+      "types": [],
+      "modelConfiguration": {
+        "fallbackIntentSensitivity": {
+          "level": "LOW"
+        }
+      }
+    }
+  },
+  "version": "1"
+}
