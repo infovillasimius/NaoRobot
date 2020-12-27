@@ -19,8 +19,8 @@ session = qi.Session()
 try:
     session.connect("tcp://" + args.ip + ":" + str(args.port))
 except RuntimeError:
-    print ("Can't connect to Naoqi at ip \"" + args.ip + "\" on port " + str(args.port) +".\n"
-           "Please check your script arguments. Run with -h option for help.")
+    print("Can't connect to Naoqi at ip \"" + args.ip + "\" on port " + str(args.port))
+    print("Please check your script arguments. Run with -h option for help.")
     sys.exit(1)
 
 posture_service = session.service("ALRobotPosture")
@@ -29,45 +29,37 @@ posture_service.goToPosture("StandInit", 1.0)
 # Create a TCP/IP socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Bind the socket to the port
-server_address = ('192.168.1.125', 10000)
-print >>sys.stderr, 'starting up on %s port %s' % server_address
+server_address = ('127.0.0.1', 10000)
+print('starting up on %s port %s' % server_address)
 sock.bind(server_address)
 sock.listen(1)
 
 while True:
     # Wait for a connection
-    print >>sys.stderr, 'waiting for a connection'
+    print('waiting for a connection')
     connection, client_address = sock.accept()
     try:
-        print >>sys.stderr, 'connection from', client_address
+        print('connection from', client_address)
 
         # Receive the data   
         cmd = connection.recv(3)
-        print >>sys.stderr, 'received "%s"' % cmd
-        
-            
+        print('received "%s"' % cmd)
+
     finally:
         # Clean up the connection
         connection.close()
-        
 
-    if cmd =='sit':
+    if cmd == 'sit':
         posture_service.goToPosture("Sit", 1.0)
-    elif cmd =='sta':
+    elif cmd == 'sta':
         posture_service.goToPosture("Stand", 1.0)
-    elif cmd =='cro':
+    elif cmd == 'cro':
         posture_service.goToPosture("Crouch", 1.0)
-    elif cmd =='bal':
+    elif cmd == 'bal':
+        posture_service.goToPosture("Stand", 1.0)
         balla()
-    elif cmd =='sal':
+    elif cmd == 'sal':
         posture_service.goToPosture("Stand", 1.0)
         saluta()
-        
 
-    print (posture_service.getPostureFamily())
-
-    
-
-
-
-
+    print(posture_service.getPostureFamily())
